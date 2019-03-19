@@ -1,0 +1,32 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	margin: 10px;
+}
+
+.keyword>h3 {
+	font-size: 2em;
+	margin-left: 10px;
+}
+
+.sentiment>h4, .comment>h4 {
+	margin-left: 20px;
+}
+
+.sentiment>p, .comment>p {
+	margin-left: 30px;
+}
+
+.positive {
+	font-color: green;
+}
+
+.negative {
+	font-color: red;
+}
+
+.neutral {
+	font-color: blue;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<title>Home</title>
+    <link href="{{ font_url }}" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+		<a href="about">About</a>
+		<a href="cybersecurity">Search Cybersecurity Keywords</a>
+		<a href="terrorism">Search Terrorism Keywords</a>
+    </div>
+	<h1> Sybil </h1>
+	<p> Sybil performs keyword sentiment analysis on Reddit posts, utilizing a list of keywords compiled by the Department of Homeland Security. </p>
+
+    <div class="links">
+	  <a href="https://gist.github.com/jm3/2815378"> Full list of keywords </a>
+      <a href="http://text-processing.com/docs/sentiment.html">NLTK Sentiment Analysis API</a>	  
+    </div>
+    <div class="results">
+      <h2>Cybersecurity Keywords Results</h2>
+		{% for k, v in results.items() %}
+		<div class="keyword">
+			<h3>
+				{{ k }}
+			</h3>
+		</div>
+			{% for item in v %}
+			<div class="sentiment">			
+				<h4>Sentiment:</h4>
+				<p>{{ item.sentiment }}</p>
+			</div>
+
+			<div class="comment">
+				<h4>Comment:</h4>
+				<p>{{ item.comment }}</p>
+			</div>
+			{% endfor %}
+	  	{% endfor %}
+	  
+    </div>
+  </body>
+</html>
