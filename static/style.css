@@ -11,11 +11,11 @@ a {
 	margin-left: 10px;
 }
 
-.sentiment>h4, .comment>h4 {
+.sentiment>h4, .comment>h4, .permalink>h4 {
 	margin-left: 20px;
 }
 
-.sentiment>p, .comment>p {
+.sentiment>p, .comment>p, .permalink>a {
 	margin-left: 30px;
 }
 

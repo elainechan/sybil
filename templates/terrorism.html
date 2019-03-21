@@ -37,9 +37,15 @@
 		  <div class="comment">
 			  <h4>Comment:</h4>
 			  <p>{{ item.comment }}</p>
-		  </div>
+			</div>
+			
+			<div class="permalink">
+				<h4>Permalink:</h4>
+				<a href="{{ item.permalink }}">{{ item.permalink }}</a>
+			</div>
 		  {% endfor %}
 		{% endfor %}
-    </div>
+		</div>
+		
   </body>
 </html>
