@@ -1,7 +1,6 @@
 import requests
 import json
 import praw
-from pprint import pprint
 
 def cybersecurity_keywords():
     return [
@@ -128,7 +127,6 @@ def multi_search(keyword_list):
     cryptocurrency = reddit.subreddit('cryptocurrency').hot(limit=100)
     worldnews = reddit.subreddit('worldnews').hot(limit=100)
 
-
     subreddit_list = [
         cybersecurity,
         politics,
@@ -140,6 +138,7 @@ def multi_search(keyword_list):
         ]
 
     comments_dict = {}
+
     for item in subreddit_list:
         for submission in cybersecurity:
             for word in keyword_list:
@@ -164,5 +163,4 @@ def multi_search(keyword_list):
                 )
                 item['sentiment'] = r.text
         
-        print(comments_dict)
         return comments_dict
